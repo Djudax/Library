@@ -1,28 +1,28 @@
+#ifndef READER_H
+#define READER_H
 
-
-#ifndef __2_READER_H
-#define __2_READER_H
 #include <string>
-#include "Book.h"
 #include <vector>
+#include "Book.h"
 
-using namespace std;
 class Reader {
 private:
-    string name;
+    std::string name;
     int age;
-    vector<Book> borrowedBooks;
+    std::vector<Book> borrowedBooks;
 
 public:
-    Reader(string _name, int _age);
+    // Конструктори
+    Reader(std::string _name, int _age);
     Reader();
+
+    // Деструктор
     ~Reader();
+
+    // Методи
     void borrowBook(Book book);
     void listBorrowedBooks();
 };
 
+#endif // READER_H
 
-
-
-
-#endif //__2_READER_H
