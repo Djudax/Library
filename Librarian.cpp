@@ -1,16 +1,19 @@
 #include "Librarian.h"
-#include <iostream>
 
+// Конструктор
+Librarian::Librarian(std::string _name) : name(_name) {}
 
-Librarian::Librarian(string _name) : name(_name) {}
-
+// Конструктор за замовчуванням
 Librarian::Librarian() : name("") {}
 
+// Деструктор
 Librarian::~Librarian() {}
 
+// Метод привітання
 void Librarian::greet() {
-    cout << "Hello! My name is " << name << ", how can I help you?" << endl;
+    std::cout << "Hello! My name is " << name << ", how can I help you?" << std::endl;
 }
+
 
 
 

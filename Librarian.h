@@ -1,22 +1,24 @@
+#ifndef LIBRARIAN_H
+#define LIBRARIAN_H
 
-
-#ifndef __2_LIBRARIAN_H
-#define __2_LIBRARIAN_H
 #include <string>
-
-using namespace std;
+#include <iostream>
 
 class Librarian {
 private:
-    string name;
+    std::string name;
 
 public:
-    Librarian(string _name);
+    // Конструктори
+    Librarian(std::string _name);
     Librarian();
-    ~Librarian();
-    void greet();
 
+    // Деструктор
+    ~Librarian();
+
+    // Метод
+    void greet();
 };
 
+#endif // LIBRARIAN_H
 
-#endif //__2_LIBRARIAN_H
