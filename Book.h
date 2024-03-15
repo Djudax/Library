@@ -1,24 +1,32 @@
+#ifndef BOOK_H
+#define BOOK_H
 
-#include <iostream>
-#ifndef __2_BOOK_H
-#define __2_BOOK_H
 #include <string>
-using namespace std;
+#include <iostream>
 
 class Book {
 private:
-    string title;
-    string author;
+    std::string title;
+    std::string author;
     int pages;
+    static int totalCount;
 
 public:
-    Book(string _title, string _author, int _pages);
+    // Конструктори
+    Book(std::string _title, std::string _author, int _pages);
+    Book(const Book& other);
+    Book(Book&& other) noexcept;
 
+    // Деструктор
     ~Book();
-    void getInfo();
 
+    // Методи
+    void getInfo() const;
+    static void showTotalCount();
+
+    // Перевантаження операторів
+    friend std::ostream& operator<<(std::ostream& os, const Book& book);
+    friend std::istream& operator>>(std::istream& is, Book& book);
 };
 
-
-
-#endif //__2_BOOK_H
+#endif // BOOK_H
