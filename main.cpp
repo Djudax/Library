@@ -2,25 +2,25 @@
 #include "Book.h"
 #include "Reader.h"
 #include "Librarian.h"
+#include "Library.h"
 
 int main() {
-    // Створення об'єктів книг
     Book book1("Harry Potter", "J.K. Rowling", 200);
     Book book2("The Great Gatsby", "F. Scott Fitzgerald", 180);
 
-    // Створення об'єктів читача та бібліотекаря
     Reader reader("John", 25);
     Librarian librarian("Alice");
+    Library library("Central Library");
 
-    // Виведення вітання бібліотекаря
     librarian.greet();
 
-    // Читач бере книги у бібліотеці
-    reader.borrowBook(book1);
-    reader.borrowBook(book2);
+    library.addBook(book1);
+    library.addBook(book2);
 
-    // Виведення списку взятих книг
-    reader.listBorrowedBooks();
+    library.lendBook(reader, book1);
+    library.lendBook(reader, book2);
+
+    library.listBooks();
 
     return 0;
 }
