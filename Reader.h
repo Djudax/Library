@@ -12,17 +12,11 @@ private:
     std::vector<Book> borrowedBooks;
 
 public:
-    // Конструктори
     Reader(std::string _name, int _age);
     Reader();
-
-    // Деструктор
     ~Reader();
-
-    // Методи
     void borrowBook(Book book);
     void listBorrowedBooks();
 };
 
 #endif // READER_H
-
