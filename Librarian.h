@@ -9,16 +9,10 @@ private:
     std::string name;
 
 public:
-    // Конструктори
     Librarian(std::string _name);
     Librarian();
-
-    // Деструктор
     ~Librarian();
-
-    // Метод
     void greet();
 };
 
 #endif // LIBRARIAN_H
-
