@@ -12,21 +12,16 @@ private:
     static int totalCount;
 
 public:
-    // Конструктори
     Book(std::string _title, std::string _author, int _pages);
-    Book(const Book& other);
-    Book(Book&& other) noexcept;
-
-    // Деструктор
+    Book(const Book& other);  // Конструктор копіювання
+    Book(Book&& other) noexcept;  // Конструктор переміщення
     ~Book();
-
-    // Методи
     void getInfo() const;
-    static void showTotalCount();
-
-    // Перевантаження операторів
-    friend std::ostream& operator<<(std::ostream& os, const Book& book);
-    friend std::istream& operator>>(std::istream& is, Book& book);
+    static int getTotalCount();
+    Book operator-() const;  // Унарний оператор "-"
+    Book operator+(const Book& other) const;  // Бінарний оператор "+"
+    friend std::istream& operator>>(std::istream& input, Book& book);  // Дружня функція operator>>
+    friend std::ostream& operator<<(std::ostream& output, const Book& book);  // Дружня функція operator<<
 };
 
 #endif // BOOK_H
