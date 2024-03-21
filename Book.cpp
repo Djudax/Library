@@ -29,12 +29,10 @@ int Book::getTotalCount() {
 }
 
 Book Book::operator-() const {
-    // Повертаємо книгу з оберненим заголовком
     return Book("-" + title, author, pages);
 }
 
 Book Book::operator+(const Book& other) const {
-    // Об'єднуємо книги
     return Book(title + " + " + other.title, author + " + " + other.author, pages + other.pages);
 }
 

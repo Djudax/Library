@@ -13,15 +13,15 @@ private:
 
 public:
     Book(std::string _title, std::string _author, int _pages);
-    Book(const Book& other);  // Конструктор копіювання
-    Book(Book&& other) noexcept;  // Конструктор переміщення
+    Book(const Book& other);
+    Book(Book&& other) noexcept;
     ~Book();
     void getInfo() const;
     static int getTotalCount();
-    Book operator-() const;  // Унарний оператор "-"
-    Book operator+(const Book& other) const;  // Бінарний оператор "+"
-    friend std::istream& operator>>(std::istream& input, Book& book);  // Дружня функція operator>>
-    friend std::ostream& operator<<(std::ostream& output, const Book& book);  // Дружня функція operator<<
+    Book operator-() const;
+    Book operator+(const Book& other) const;
+    friend std::istream& operator>>(std::istream& input, Book& book);
+    friend std::ostream& operator<<(std::ostream& output, const Book& book);
 };
 
 #endif // BOOK_H
