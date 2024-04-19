@@ -1,54 +1,16 @@
-#include "Book.h"
+#include "../Лаба ООП 2/Book.h"
 
-int Book::totalCount = 0;
+Book::Book(const std::string& title, const std::string& author, int year)
+        : title(title), author(author), year(year) {}
 
-Book::Book(std::string _title, std::string _author, int _pages) : title(_title), author(_author), pages(_pages) {
-    totalCount++;
+std::string Book::getTitle() const {
+    return title;
 }
 
-Book::Book(const Book& other) : title(other.title), author(other.author), pages(other.pages) {
-    totalCount++;
+std::string Book::getAuthor() const {
+    return author;
 }
 
-Book::Book(Book&& other) noexcept : title(std::move(other.title)), author(std::move(other.author)), pages(other.pages) {
-    totalCount++;
-}
-
-Book::~Book() {
-    totalCount--;
-}
-
-void Book::getInfo() const {
-    std::cout << "Title: " << title << std::endl;
-    std::cout << "Author: " << author << std::endl;
-    std::cout << "Pages: " << pages << std::endl;
-}
-
-int Book::getTotalCount() {
-    return totalCount;
-}
-
-Book Book::operator-() const {
-    return Book("-" + title, author, pages);
-}
-
-Book Book::operator+(const Book& other) const {
-    return Book(title + " + " + other.title, author + " + " + other.author, pages + other.pages);
-}
-
-std::istream& operator>>(std::istream& input, Book& book) {
-    std::cout << "Enter title: ";
-    input >> book.title;
-    std::cout << "Enter author: ";
-    input >> book.author;
-    std::cout << "Enter pages: ";
-    input >> book.pages;
-    return input;
-}
-
-std::ostream& operator<<(std::ostream& output, const Book& book) {
-    output << "Title: " << book.title << std::endl;
-    output << "Author: " << book.author << std::endl;
-    output << "Pages: " << book.pages << std::endl;
-    return output;
+int Book::getYear() const {
+    return year;
 }
