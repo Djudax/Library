@@ -2,21 +2,14 @@
 #define READER_H
 
 #include <string>
-#include <vector>
-#include "Book.h"
 
 class Reader {
 private:
     std::string name;
-    int age;
-    std::vector<Book> borrowedBooks;
 
 public:
-    Reader(std::string _name, int _age);
-    Reader();
-    ~Reader();
-    void borrowBook(Book book);
-    void listBorrowedBooks();
+    Reader(const std::string& name);
+    std::string getName() const;
 };
 
 #endif // READER_H
