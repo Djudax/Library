@@ -1,15 +1,7 @@
 #include "Librarian.h"
 
-Librarian::Librarian(std::string _name) : name(_name) {}
+Librarian::Librarian(const std::string& name) : name(name) {}
 
-Librarian::Librarian() : name("") {}
-
-Librarian::~Librarian() {}
-
-void Librarian::greet() {
-    std::cout << "Hello! My name is " << name << ", how can I help you?" << std::endl;
+std::string Librarian::getName() const {
+    return name;
 }
-
-
-
-
