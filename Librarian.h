@@ -1,15 +1,10 @@
 #ifndef LIBRARIAN_H
 #define LIBRARIAN_H
 
-#include <string>
-
 class Librarian {
-private:
-    std::string name;
-
 public:
-    Librarian(const std::string& name);
-    std::string getName() const;
+    virtual void manage();
+    virtual ~Librarian();
 };
 
 #endif // LIBRARIAN_H
