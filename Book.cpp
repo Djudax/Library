@@ -1,16 +1,15 @@
-#include "../Лаба ООП 2/Book.h"
+#include "book.h"
+#include <iostream>
 
-Book::Book(const std::string& title, const std::string& author, int year)
-        : title(title), author(author), year(year) {}
-
-std::string Book::getTitle() const {
-    return title;
+void Book::print() {
+    std::cout << "Book printed" << std::endl;
 }
 
-std::string Book::getAuthor() const {
-    return author;
+void Book::open() {
+    std::cout << "Book opened" << std::endl;
 }
 
-int Book::getYear() const {
-    return year;
+Book::~Book() {
+    std::cout << "Book destroyed" << std::endl;
 }
+
