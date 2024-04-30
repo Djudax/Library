@@ -1,20 +1,10 @@
-#include "Library.h"
+#include "librarian.h"
 #include <iostream>
 
-Library::Library(std::string _name) : name(_name) {}
-
-void Library::addBook(const Book& book) {
-    collection.push_back(book);
+void Librarian::manage() {
+    std::cout << "Librarian managing" << std::endl;
 }
 
-void Library::lendBook(Reader reader, const Book& book) {
-    reader.borrowBook(book);
+Librarian::~Librarian() {
+    std::cout << "Librarian destroyed" << std::endl;
 }
-
-void Library::listBooks() const {
-    std::cout << "Books in library '" << name << "':" << std::endl;
-    for (const Book& book : collection) {
-        std::cout << book << std::endl;
-    }
-}
-
