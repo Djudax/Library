@@ -1,7 +1,10 @@
-#include "Reader.h"
+#include "reader.h"
+#include <iostream>
 
-Reader::Reader(const std::string& name) : name(name) {}
+void Reader::read() {
+    std::cout << "Reader reading" << std::endl;
+}
 
-std::string Reader::getName() const {
-    return name;
+Reader::~Reader() {
+    std::cout << "Reader destroyed" << std::endl;
 }
